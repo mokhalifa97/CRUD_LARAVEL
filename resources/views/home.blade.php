@@ -7,19 +7,19 @@
         <div class="col-md-6 mt-5">
             <div class="card">
                 <div class="card-header">
-                Catgories <span class="badge badge-info">{{$cate->count()}}</span>
+                  {{__('language.CATEGORY')}} <span class="badge badge-info">{{$cate->count()}}</span>
                 </div>
                 <div class="card-body">
                     <table class="table">
                         <thead class="thead-dark">
                             @if ($cate->count()>0)
                           <tr>
-                            <th scope="col">Id</th>
+                            <th scope="col">ID</th>
                             <th scope="col">{{__('language.TITLE')}}</th>
-                            <th scope="col">Description_en</th>
-                            <th scope="col">Parent_id</th>
-                            <th scope="col">Created_at</th>
-                            <th scope="col">Operation</th>
+                            <th scope="col">{{__("language.DESCRIPTION")}}</th>
+                            <th scope="col">{{__("language.PARENT")}}</th>
+                            <th scope="col">{{__("language.CREATED")}}</th>
+                            <th scope="col">{{__("language.OPERATION")}}</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -55,19 +55,19 @@
         <div class="col-md-6 mt-5">
             <div class="card">
                 <div class="card-header">
-                Products <span class="badge badge-info">{{$pro->count()}}</span>
+                  {{__('language.PRODUCT')}} <span class="badge badge-info">{{$pro->count()}}</span>
                 </div>
                 <div class="card-body">
                     <table class="table">
                         <thead class="thead-dark">
                           <tr>
                             <th scope="col">ID</th>
-                            <th scope="col">title_en</th>
-                            <th scope="col">description_en</th>
-                            <th scope="col">price</th>
-                            <th scope="col">quantity</th>
-                            <th scope="col">created_at</th>
-                            <th scope="col">Operation</th>
+                            <th scope="col">{{__('language.TITLE')}}</th>
+                            <th scope="col">{{__("language.DESCRIPTION")}}</th>
+                            <th scope="col">{{__("language.PRICE")}}</th>
+                            <th scope="col">{{__("language.QUANTITY")}}</th>
+                            <th scope="col">{{__("language.CREATED")}}</th>
+                            <th scope="col">{{__("language.OPERATION")}}</th>
                           </tr>
                         </thead>
                         <tbody>

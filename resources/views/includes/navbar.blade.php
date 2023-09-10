@@ -11,11 +11,15 @@
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('cate')}}">Category</a>
+                    <a class="nav-link" href="{{route('cate')}}">
+                        {{__('language.CATEGORY')}}
+                    </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('pro')}}">Product</a>
+                    <a class="nav-link" href="{{route('pro')}}">
+                    {{__('language.PRODUCT')}}
+                    </a>
                 </li>
 
                 @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
