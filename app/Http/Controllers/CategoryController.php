@@ -27,4 +27,22 @@ class CategoryController extends Controller
         $categories->delete();
         return redirect()->route('home');
     }
+
+    public function create(){
+        $cate=Category::all();
+        return view('categories.create',['category'=>$cate]);
+    }
+
+    public function save(Request $request){
+        Category::create([
+            "id" => $request->id,
+            "title_en" =>$request->title_en,
+            "title_ar" =>$request->title_ar,
+            "description_en"=> $request->description_en,
+            "description_ar"=>$request->description_ar,
+            "parent_id"=>$request->parent_id
+        ]);
+
+        return redirect()->route('home');
+    }
 }

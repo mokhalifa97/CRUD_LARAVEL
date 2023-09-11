@@ -6,8 +6,11 @@
     <div class="row">
         <div class="col-md-6 mt-5">
             <div class="card">
-                <div class="card-header">
-                  {{__('language.CATEGORY')}} <span class="badge badge-info">{{$cate->count()}}</span>
+                <div class="card-header d-flex justify-content-between align-item-center">
+                  <h5>
+                    {{__('language.CATEGORY')}} <span class="badge badge-info">{{$cate->count()}}</span>
+                  </h5>
+                  <a href="{{route('categories.create')}}" class="btn btn-success">Crete New Category</a>
                 </div>
                 <div class="card-body">
                     <table class="table">

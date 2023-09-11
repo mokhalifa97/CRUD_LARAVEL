@@ -28,6 +28,8 @@ Route::group(
             //category crud operation
             Route::get('/categories/show/{id}','CategoryController@show')->name('category.show');
             Route::get('/categories/delete/{id}','CategoryController@delete')->name('category.delete');
+            Route::get('/categories/create','CategoryController@create')->name('categories.create');
+            Route::post('/categories/save','CategoryController@save')->name('categories.save');
 
             //product crud operation
             Route::get('/products/show{id}',"ProductController@show")->name("products.show");
