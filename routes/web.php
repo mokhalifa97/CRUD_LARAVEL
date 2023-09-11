@@ -34,6 +34,8 @@ Route::group(
             //product crud operation
             Route::get('/products/show{id}',"ProductController@show")->name("products.show");
             Route::get('/products/delete{id}',"ProductController@delete")->name("products.delete");
+            Route::get('/products/create','ProductController@create')->name('products.create');
+            Route::post('products/save','ProductController@save')->name('products.save');
 
         });    
         

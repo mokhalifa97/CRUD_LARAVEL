@@ -6,6 +6,9 @@
     <div class="row">
         <div class="col-md-6 mt-5">
             <div class="card">
+              @if (session('cate'))
+              <div class="alert alert-primary" >{{session('cate')}}</div>
+          @endif
                 <div class="card-header d-flex justify-content-between align-item-center">
                   <h5>
                     {{__('language.CATEGORY')}} <span class="badge badge-info">{{$cate->count()}}</span>
@@ -57,8 +60,12 @@
 
         <div class="col-md-6 mt-5">
             <div class="card">
-                <div class="card-header">
-                  {{__('language.PRODUCT')}} <span class="badge badge-info">{{$pro->count()}}</span>
+              @if (session('success'))
+                  <div class="alert alert-primary" >{{session('success')}}</div>
+              @endif
+                <div class="card-header d-flex justify-content-between align-item-center">
+                  <h5>{{__('language.PRODUCT')}} <span class="badge badge-info">{{$pro->count()}}</span></h5>
+                  <a href="{{route('products.create')}}" class="btn btn-success">Create New Product</a>
                 </div>
                 <div class="card-body">
                     <table class="table">
@@ -86,7 +93,7 @@
                             <td scope="row">{{$item->price}}</td>
                             <td scope="row">{{$item->quantity}}</td>
                             <td scope="row">{{$item->created_at}}</td>
-                            <td scope="row">
+                            <td scope="row" class="d-flex">
                               <a href="{{route("products.show",$item->id)}}" class="btn btn-success">
                                 <i class="fa-solid fa-eye"></i>
                               </a>

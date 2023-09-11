@@ -43,6 +43,6 @@ class CategoryController extends Controller
             "parent_id"=>$request->parent_id
         ]);
 
-        return redirect()->route('home');
+        return redirect()->route('home')->with('cate','NEW CATEGORY ADDED SUCCESSFULLY');
     }
 }
