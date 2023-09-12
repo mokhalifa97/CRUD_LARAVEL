@@ -13,35 +13,63 @@
                     <input type="text" class="form-control" name="id">
                 </div>
 
+                @error('id')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+
                 <div class="form-group">
                     <label for="exampleInputEmail1">Title_en</label>
                     <input type="text" class="form-control" name="title_en">
                 </div>
+
+                @error('title_en')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
 
                 <div class="form-group">
                     <label for="exampleInputEmail1">Title_ar</label>
                     <input type="text" class="form-control" name="title_ar">
                 </div>
 
+                @error('title_ar')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+
                 <div class="form-group">
                     <label for="exampleInputEmail1">Description_en</label>
                     <input type="text" class="form-control" name="description_en">
                 </div>
+
+                @error('description_en')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
 
                 <div class="form-group">
                     <label for="exampleInputEmail1">Description_ar</label>
                     <input type="text" class="form-control" name="description_ar">
                 </div>
 
+                @error('description_ar')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+
                 <div class="form-group">
                     <label for="exampleInputEmail1">Price</label>
                     <input type="text" class="form-control" name="price">
                 </div>
 
+                @error('price')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+
                 <div class="form-group">
                     <label for="exampleInputEmail1">Quantity</label>
                     <input type="text" class="form-control" name="quantity">
                 </div>
+
+                @error('quantity')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
 
                 <button type="submit" class="btn btn-primary btn-block">Submit</button>
               </form>

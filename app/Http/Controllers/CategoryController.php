@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CatgoryRequest;
 use App\model\Category;
 use Illuminate\Http\Request;
 
@@ -33,7 +34,7 @@ class CategoryController extends Controller
         return view('categories.create',['category'=>$cate]);
     }
 
-    public function save(Request $request){
+    public function save(CatgoryRequest $request){
         Category::create([
             "id" => $request->id,
             "title_en" =>$request->title_en,

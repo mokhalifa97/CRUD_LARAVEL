@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ProductRequest;
 use App\model\Product;
 use Illuminate\Http\Request;
 
@@ -27,7 +28,7 @@ class ProductController extends Controller
         return view('products.create');
     }
 
-    public function save(Request $request){
+    public function save(ProductRequest $request){
         Product::create([
             "id" =>$request->id,
             "title_en" =>$request->title_en,
