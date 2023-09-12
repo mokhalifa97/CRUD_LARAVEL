@@ -10,6 +10,16 @@
             <form enctype="multipart/form-data" method="POST" action="{{route('categories.save')}}" >
                 @csrf
                 <div class="form-group">
+                    <label for="exampleInputEmail1">Image</label>
+                    <input type="file" class="form-control" name="cate_image">
+                </div>
+
+                @error('cate_image')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+
+
+                <div class="form-group">
                     <label for="exampleInputEmail1">ID</label>
                     <input type="text" class="form-control" name="id">
                 </div>

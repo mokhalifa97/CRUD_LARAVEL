@@ -9,6 +9,8 @@
               @if (session('cate'))
               <div class="alert alert-primary" >{{session('cate')}}</div>
           @endif
+          <div class="table-responsive">
+
                 <div class="card-header d-flex justify-content-between align-item-center">
                   <h5>
                     {{__('language.CATEGORY')}} <span class="badge badge-info">{{$cate->count()}}</span>
@@ -20,6 +22,7 @@
                         <thead class="thead-dark">
                             @if ($cate->count()>0)
                           <tr>
+                            <th scope="col">Image</th>
                             <th scope="col">ID</th>
                             <th scope="col">{{__('language.TITLE')}}</th>
                             <th scope="col">{{__("language.DESCRIPTION")}}</th>
@@ -32,12 +35,15 @@
                         
                         @foreach ($cate as $item)
                           <tr>
+                            <td scope="row">
+                              <img src="{{asset('categories/images/'.$item->cate_image)}}"  style="width:70px; heghit:70px;">
+                            </td>
                             <td scope="row">{{$item->id}}</td>
                             <td scope="row">{{$item->title_en}}</td>
                             <td scope="row">{{$item->description_en}}</td>
                             <td scope="row">{{$item->parent_id}}</td>
                             <td scope="row">{{$item->created_at}}</td>
-                            <td scope="row">
+                            <td scope="row" class="d-flex">
                               <a href="{{route('category.show',$item->id)}}" class="btn btn-success">
                                 <i class="fa-solid fa-eye"></i>
                               </a>
@@ -54,6 +60,7 @@
                         </tbody>
                         
                       </table>
+                    </div>
                 </div>
             </div>
         </div>

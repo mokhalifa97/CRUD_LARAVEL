@@ -9,6 +9,7 @@
             <table class="table">
                 <thead class="thead-dark">
                     <tr>
+                      <th scope="col">Image</th>
                         <th scope="col">Id</th>
                         <th scope="col">{{__('language.TITLE')}}</th>
                         <th scope="col">Description_en</th>
@@ -19,6 +20,9 @@
                 </thead>
                 <tbody>
                   <tr>
+                    <td scope="row">
+                      <img src="{{asset('categories/images/'.$categories->cate_image)}}"  style="width:70px; heghit:70px;">
+                    </td>
                     <td scope="row">{{$categories->id}}</td>
                     <td scope="row">{{$categories->title_en}}</td>
                     <td scope="row">{{$categories->description_en}}</td>

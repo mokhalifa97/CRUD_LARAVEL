@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CatgoryRequest;
 use App\model\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class CategoryController extends Controller
 {
@@ -25,6 +26,11 @@ class CategoryController extends Controller
 
     public function delete($category_id){
         $categories= Category::findOrFail($category_id);
+        if(File::exists(public_path('categories/images/'.$categories->cate_image))){
+            File::delete(public_path('categories/images/'.$categories->cate_image));
+            }else{
+            dd('File does not exists.');
+            }
         $categories->delete();
         return redirect()->route('home');
     }
@@ -35,7 +41,16 @@ class CategoryController extends Controller
     }
 
     public function save(CatgoryRequest $request){
+
+        $imageName='';
+        if($request->hasFile('cate_image')){
+            $image= $request->cate_image;
+            $imageName=  time() .'_'. rand(0,1000) . "." . $image->extension(); //  3455235_22.png
+            $image->move(public_path('categories/images'),$imageName);
+        }
+
         Category::create([
+            "cate_image" => $imageName,
             "id" => $request->id,
             "title_en" =>$request->title_en,
             "title_ar" =>$request->title_ar,
