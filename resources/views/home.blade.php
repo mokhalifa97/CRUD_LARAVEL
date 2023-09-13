@@ -6,9 +6,7 @@
     <div class="row">
         <div class="col-md-6 mt-5">
             <div class="card">
-              @if (session('cate'))
-              <div class="alert alert-primary" >{{session('cate')}}</div>
-          @endif
+
           <div class="table-responsive">
 
                 <div class="card-header d-flex justify-content-between align-item-center">
@@ -18,6 +16,10 @@
                   <a href="{{route('categories.create')}}" class="btn btn-success">Crete New Category</a>
                 </div>
                 <div class="card-body">
+                  @if (session('cate'))
+                  <div class="alert alert-primary" >{{session('cate')}}</div>
+              @endif
+
                     <table class="table">
                         <thead class="thead-dark">
                             @if ($cate->count()>0)
@@ -46,6 +48,9 @@
                             <td scope="row" class="d-flex">
                               <a href="{{route('category.show',$item->id)}}" class="btn btn-success">
                                 <i class="fa-solid fa-eye"></i>
+                              </a>
+                              <a href="{{route('categories.edit',$item->id)}}" class="btn btn-info">
+                                <i class="fa-solid fa-pencil"></i>
                               </a>
                               <a href="{{route('category.delete',$item->id)}}" class="btn btn-danger">
                                 <i class="fa-solid fa-trash"></i>

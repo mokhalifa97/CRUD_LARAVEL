@@ -30,6 +30,8 @@ Route::group(
             Route::get('/categories/delete/{id}','CategoryController@delete')->name('category.delete');
             Route::get('/categories/create','CategoryController@create')->name('categories.create');
             Route::post('/categories/save','CategoryController@save')->name('categories.save');
+            Route::get('/categories/edit/{id}','CategoryController@edit')->name('categories.edit');
+            Route::post('/categories/update','CategoryController@update')->name('categories.update');
 
             //product crud operation
             Route::get('/products/show{id}',"ProductController@show")->name("products.show");

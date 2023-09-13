@@ -61,4 +61,34 @@ class CategoryController extends Controller
 
         return redirect()->route('home')->with('cate','NEW CATEGORY ADDED SUCCESSFULLY');
     }
+
+    public function edit($category_id){
+        $allCategory=Category::all();
+        $cate=Category::findOrFail($category_id); 
+        return view('categories.edit',['categories'=>$cate,'allCate'=>$allCategory]);
+    }
+
+
+    public function update(CatgoryRequest $request){
+        $category_id= $request->old_id;
+        $update=Category::findOrFail($category_id);
+        $imageName='';
+        if($request->hasFile('cate_image')){
+            $image= $request->cate_image;
+            $imageName=  time() .'_'. rand(0,1000) . "." . $image->extension(); //  3455235_22.png
+            $image->move(public_path('categories/images'),$imageName);
+        }
+
+        $update->update([
+            "cate_image" => $imageName,
+            "id" => $request->id,
+            "title_en" =>$request->title_en,
+            "title_ar" =>$request->title_ar,
+            "description_en"=> $request->description_en,
+            "description_ar"=>$request->description_ar,
+            "parent_id"=>$request->parent_id
+        ]);
+
+        return redirect()->route('home')->with('cate','UPDATED CATEGORY SUCCESSFULLY');
+    }
 }
