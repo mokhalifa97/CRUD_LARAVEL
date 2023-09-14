@@ -21,3 +21,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/alldata','API\categoryController@index'); 
 Route::get('/showone/{id}','API\categoryController@show'); 
 Route::post('/create','API\categoryController@create');
+Route::post('/delete','API\categoryController@delete');
+Route::post('/update','API\categoryController@update');
