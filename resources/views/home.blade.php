@@ -46,13 +46,13 @@
                             <td scope="row">{{$item->parent_id}}</td>
                             <td scope="row">{{$item->created_at}}</td>
                             <td scope="row" class="d-flex">
-                              <a href="{{route('category.show',$item->id)}}" class="btn btn-success">
+                              <a href="{{route('category.show',$item->id)}}" class="btn btn-success ml-1">
                                 <i class="fa-solid fa-eye"></i>
                               </a>
-                              <a href="{{route('categories.edit',$item->id)}}" class="btn btn-info">
+                              <a href="{{route('categories.edit',$item->id)}}" class="btn btn-primary ml-1">
                                 <i class="fa-solid fa-pencil"></i>
                               </a>
-                              <a href="{{route('category.delete',$item->id)}}" class="btn btn-danger">
+                              <a href="{{route('category.delete',$item->id)}}" class="btn btn-danger ml-1">
                                 <i class="fa-solid fa-trash"></i>
                               </a>
                             </td>
@@ -109,13 +109,13 @@
                             <td scope="row">{{$item->quantity}}</td>
                             <td scope="row">{{$item->created_at}}</td>
                             <td scope="row" class="d-flex">
-                              <a href="{{route("products.show",$item->id)}}" class="btn btn-success">
+                              <a href="{{route("products.show",$item->id)}}" class="btn btn-success ml-1">
                                 <i class="fa-solid fa-eye"></i>
                               </a>
-                              <a href="{{route('products.edit',$item->id)}}" class="btn btn-info">
+                              <a href="{{route('products.edit',$item->id)}}" class="btn btn-primary ml-1">
                                 <i class="fa-solid fa-pencil"></i>
                               </a>
-                              <a href="{{route("products.delete",$item->id)}}" class="btn btn-danger">
+                              <a href="{{route("products.delete",$item->id)}}" class="btn btn-danger ml-1">
                                 <i class="fa-solid fa-trash"></i>
                               </a>
                             </td>

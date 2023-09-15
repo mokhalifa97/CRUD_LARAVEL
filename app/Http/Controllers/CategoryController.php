@@ -16,7 +16,8 @@ class CategoryController extends Controller
 
     
     public function index(){
-        return view('Category');
+        $category=Category::all();
+        return view('Category',["cate"=>$category]);
     }
 
     public function show($category_id){
