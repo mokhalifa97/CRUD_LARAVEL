@@ -41,4 +41,27 @@ class ProductController extends Controller
 
         return redirect()->route('home')->with('success','NEW PRODUCT ADDED SUCCESSFULLY');
     }
+
+    public function edit($id){
+        $product=Product::findOrFail($id);
+        return view('products.edit',['products'=>$product]);
+    }
+
+    public function update(ProductRequest $request){
+        $product_id= $request->old_id;
+        $update=Product::findOrFail($product_id);
+
+        $update->update([
+            "id" => $request->id,
+            "title_en" =>$request->title_en,
+            "title_ar" =>$request->title_ar,
+            "description_en"=> $request->description_en,
+            "description_ar"=>$request->description_ar,
+            "price"=>$request->price,
+            'quantity'=>$request->quantity
+        ]);
+
+        return redirect()->route('home')->with('pro','UPDATED PRODUCT SUCCESSFULLY');
+    }
+    
 }

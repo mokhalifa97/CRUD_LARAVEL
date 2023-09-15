@@ -38,6 +38,8 @@ Route::group(
             Route::get('/products/delete{id}',"ProductController@delete")->name("products.delete");
             Route::get('/products/create','ProductController@create')->name('products.create');
             Route::post('products/save','ProductController@save')->name('products.save');
+            Route::get('/products/edit/{id}','ProductController@edit')->name('products.edit');
+            Route::post('products/update','ProductController@update')->name('products.update');
 
         });    
         

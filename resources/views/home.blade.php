@@ -80,6 +80,9 @@
                   <a href="{{route('products.create')}}" class="btn btn-success">Create New Product</a>
                 </div>
                 <div class="card-body">
+                  @if (session('pro'))
+                  <div class="alert alert-primary" >{{session('pro')}}</div>
+              @endif
                     <table class="table">
                         <thead class="thead-dark">
                           <tr>
@@ -108,6 +111,9 @@
                             <td scope="row" class="d-flex">
                               <a href="{{route("products.show",$item->id)}}" class="btn btn-success">
                                 <i class="fa-solid fa-eye"></i>
+                              </a>
+                              <a href="{{route('products.edit',$item->id)}}" class="btn btn-info">
+                                <i class="fa-solid fa-pencil"></i>
                               </a>
                               <a href="{{route("products.delete",$item->id)}}" class="btn btn-danger">
                                 <i class="fa-solid fa-trash"></i>
