@@ -17,9 +17,9 @@
                     <input type="text" class="form-control" name="id" value="{{$products->id}}">
                 </div>
 
-                {{-- @error('id')
+                @error('id')
                 <div class="alert alert-danger">{{ $message }}</div>
-                @enderror --}}
+                @enderror
 
 
                 <div class="form-group">
@@ -27,51 +27,51 @@
                     <input type="text" class="form-control" name="title_en" value="{{$products->title_en}}">
                 </div>
 
-{{--                 
+                
                 @error('title_en')
                 <div class="alert alert-danger">{{ $message }}</div>
-                @enderror --}}
+                @enderror
 
                 <div class="form-group">
                     <label for="exampleInputEmail1">Title_ar</label>
                     <input type="text" class="form-control" name="title_ar" value="{{$products->title_ar}}">
                 </div>
-{{-- 
+
                 @error('title_ar')
                 <div class="alert alert-danger">{{ $message }}</div>
-                @enderror --}}
+                @enderror
 
                 <div class="form-group">
                     <label for="exampleInputEmail1">Descripton_en</label>
                     <input type="text" class="form-control" name="description_en" value="{{$products->description_en}}">
                 </div>
-                {{-- @error('description_en')
+                @error('description_en')
                 <div class="alert alert-danger">{{ $message }}</div>
-                @enderror --}}
+                @enderror
 
                 <div class="form-group">
                     <label for="exampleInputEmail1">Descripton_ar</label>
                     <input type="text" class="form-control" name="description_ar" value="{{$products->description_ar}}">
                 </div>
-                {{-- @error('description_ar')
+                @error('description_ar')
                 <div class="alert alert-danger">{{ $message }}</div>
-                @enderror --}}
+                @enderror
 
                 <div class="form-group">
                     <label for="exampleInputEmail1">Price</label>
                     <input type="text" class="form-control" name="price" value="{{$products->price}}">
                 </div>
-                {{-- @error('price')
+                @error('price')
                 <div class="alert alert-danger">{{ $message }}</div>
-                @enderror --}}
+                @enderror
 
                 <div class="form-group">
                     <label for="exampleInputEmail1">Quantity</label>
                     <input type="text" class="form-control" name="quantity" value="{{$products->quantity}}">
                 </div>
-                {{-- @error('quantity')
+                @error('quantity')
                 <div class="alert alert-danger">{{ $message }}</div>
-                @enderror --}}
+                @enderror
 
         
 
