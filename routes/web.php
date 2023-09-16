@@ -24,6 +24,7 @@ Route::group(
             Route::get('/home','HomeController@index')->name('home')->middleware('checkAdmin');
             Route::get('/cat','CategoryController@index')->name('cate')->middleware('checkAdmin');
             Route::get('/product','ProductController@index')->name('pro')->middleware('checkAdmin');
+            Route::get('/employee','EmployeeController@index')->name('employee')->middleware('checkAdmin');
 
             //category crud operation
             Route::get('/categories/show/{id}','CategoryController@show')->name('category.show');

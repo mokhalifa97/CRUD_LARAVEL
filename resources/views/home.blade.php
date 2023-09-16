@@ -85,6 +85,7 @@
               @endif
                     <table class="table">
                         <thead class="thead-dark">
+                          @if ($pro->count()>0)
                           <tr>
                             <th scope="col">ID</th>
                             <th scope="col">{{__('language.TITLE')}}</th>
@@ -96,7 +97,6 @@
                           </tr>
                         </thead>
                         <tbody>
-                            @if ($pro->count()>0)
                             @foreach ($pro as $item)
                                     
                                 
@@ -131,5 +131,50 @@
         </div>
     </div>
 </div>
+
+  <div class="container-fluid px-5">
+    <div class="row">
+      <div class="col-md-6 mt-5">
+        <div class="card">
+          <div class="card-header">
+            <h5>Employees <span class="badge badge-info">{{$emp->count()}}</span></h5>
+
+          </div>
+          <div class="card-body">
+            <table class="table">
+              <thead class="thead-dark">
+                @if ($emp->count()>0)
+                    
+                <tr>
+                  <th scope="col">id</th>
+                  <th scope="col">emp_name</th>
+                  <th scope="col">department</th>
+                  <th scope="col">dep_id</th>
+                  <th scope="col">shift</th>
+                  <th scope="col">salary</th>
+                  <th scope="col">created_at</th>
+                </tr>
+              </thead>
+              <tbody>
+
+                @foreach ($emp as $item)
+                    
+                <tr>
+                  <th scope="row">1</th>
+                  <td></td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                </tr>
+                @endforeach
+                @else
+                          <div class="alert alert-danger">No data Yet...!</div>
+                @endif
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 @endsection

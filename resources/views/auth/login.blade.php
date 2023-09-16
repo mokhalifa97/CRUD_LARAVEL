@@ -5,7 +5,14 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card mt-5">
-                <div class="card-header">{{ __('Login') }}</div>
+                <div class="card-header d-flex justify-content-between align-item-center">
+
+                    <h4>{{ __('Login') }}</h4>
+
+                    <a href="{{ route('register') }}" class="btn btn-success">
+                        Register
+                        </a>
+                </div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
@@ -57,9 +64,6 @@
                                     {{ __('Login') }}
                                 </button>
 
-                                <a href="{{ route('register') }}" class="btn btn-success">
-                                Register
-                                </a>
 
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">

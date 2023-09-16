@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\model\Category;
+use App\model\Employee;
 use App\model\Product;
 use Illuminate\Http\Request;
 
@@ -13,6 +14,7 @@ class HomeController extends Controller
     {
         $categories=Category::all();
         $products=Product::all();
-        return view('home',['cate'=>$categories,'pro'=>$products]);
+        $emp=Employee::all();
+        return view('home',['cate'=>$categories,'pro'=>$products,'emp'=>$emp]);
     }
 }
