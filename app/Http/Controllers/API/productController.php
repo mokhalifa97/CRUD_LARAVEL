@@ -134,7 +134,6 @@ class productController extends Controller
             "data" => new ProductResource($update)
         ];
         return response()->json($data);
-
     }
 
 

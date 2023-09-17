@@ -31,3 +31,10 @@ Route::get('/proOne/{id}','API\productController@show');
 Route::post('/proCreate','API\productController@create');
 Route::post('/proDelete','API\productController@delete');
 Route::post('/proUpdate','API\productController@update');
+
+//employee CRUD API
+Route::get('/empData','API\employeeController@index');
+Route::get('/empOne/{id}','API\employeeController@show');
+Route::post('/empCreate','API\employeeController@create');
+Route::post('/empDelete','API\employeeController@delete');
+Route::post('/empUpdate','API\employeeController@update');
