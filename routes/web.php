@@ -41,6 +41,14 @@ Route::group(
             Route::post('products/save','ProductController@save')->name('products.save');
             Route::get('/products/edit/{id}','ProductController@edit')->name('products.edit');
             Route::post('products/update','ProductController@update')->name('products.update');
+            
+            //employee crud operation
+            Route::get('/employee/show/{id}','EmployeeController@show')->name('employee.show');
+            Route::get('/employee/delete/{id}','EmployeeController@delete')->name('employee.delete');
+            Route::get('/employee/create','EmployeeController@create')->name('employee.create');
+            Route::post('/employee/save','EmployeeController@save')->name('employee.save');
+            Route::get('/employee/edit/{id}','EmployeeController@edit')->name('employee.edit');
+            Route::post('/employee/update','EmployeeController@update')->name('employee.update');
 
         });    
         

@@ -72,9 +72,7 @@
 
         <div class="col-md-6 mt-5">
             <div class="card">
-              @if (session('success'))
-                  <div class="alert alert-primary" >{{session('success')}}</div>
-              @endif
+              
                 <div class="card-header d-flex justify-content-between align-item-center">
                   <h5>{{__('language.PRODUCT')}} <span class="badge badge-info">{{$pro->count()}}</span></h5>
                   <a href="{{route('products.create')}}" class="btn btn-success">Create New Product</a>
@@ -82,6 +80,9 @@
                 <div class="card-body">
                   @if (session('pro'))
                   <div class="alert alert-primary" >{{session('pro')}}</div>
+              @endif
+              @if (session('success'))
+                  <div class="alert alert-primary" >{{session('success')}}</div>
               @endif
                     <table class="table">
                         <thead class="thead-dark">
@@ -132,27 +133,34 @@
     </div>
 </div>
 
-  <div class="container-fluid px-5">
-    <div class="row">
+
       <div class="col-md-6 mt-5">
         <div class="card">
-          <div class="card-header">
+          <div class="table-responsive">
+          <div class="card-header d-flex justify-content-between align-item-center">
             <h5>Employees <span class="badge badge-info">{{$emp->count()}}</span></h5>
-
+            <a href="{{route('employee.create')}}" class="btn btn-success">Create New Employee</a>
           </div>
           <div class="card-body">
+            @if (session('emp'))
+                <div class="alert alert-primary">{{session('emp')}}</div>
+                @endif
+            @if (session('empupdate'))   
+                <div class="alert alert-primary">{{session('empupdate')}}</div>
+            @endif
             <table class="table">
               <thead class="thead-dark">
                 @if ($emp->count()>0)
                     
                 <tr>
-                  <th scope="col">id</th>
-                  <th scope="col">emp_name</th>
-                  <th scope="col">department</th>
-                  <th scope="col">dep_id</th>
-                  <th scope="col">shift</th>
-                  <th scope="col">salary</th>
-                  <th scope="col">created_at</th>
+                  <th scope="col">ID</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Department</th>
+                  <th scope="col">Dep_id</th>
+                  <th scope="col">Shift</th>
+                  <th scope="col">Salary</th>
+                  <th scope="col">Created_at</th>
+                  <th scope="col">Operation</th>
                 </tr>
               </thead>
               <tbody>
@@ -160,10 +168,24 @@
                 @foreach ($emp as $item)
                     
                 <tr>
-                  <th scope="row">1</th>
-                  <td></td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
+                  <td>{{$item->id}}</td>
+                  <td>{{$item->emp_name}}</td>
+                  <td>{{$item->department}}</td>
+                  <td>{{$item->dep_id}}</td>
+                  <td>{{$item->shift}}</td>
+                  <td>{{$item->salary}}</td>
+                  <td>{{$item->created_at}}</td>
+                  <td class="d-flex">
+                  <a href="{{route('employee.show',$item->id)}}" class="btn btn-success ml-1">
+                    <i class="fa-solid fa-eye"></i>
+                  </a>
+                  <a href="{{route('employee.edit',$item->id)}}" class="btn btn-primary ml-1">
+                    <i class="fa-solid fa-pencil"></i>
+                  </a>
+                  <a href="{{route('employee.delete',$item->id)}}" class="btn btn-danger ml-1">
+                    <i class="fa-solid fa-trash"></i>
+                  </a>
+                  </td>
                 </tr>
                 @endforeach
                 @else
@@ -172,9 +194,9 @@
               </tbody>
             </table>
           </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
+
 
 @endsection
